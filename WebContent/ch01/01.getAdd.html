@@ -1,0 +1,32 @@
+<meta charset='utf-8'>
+<form action = 'get/add' method='get'>  <!-- 메서드의 기본값인 겟을 써주고, 폼을 제출해본다!!  -->
+	<button type='submit'>GET</button>
+</form>
+<form action='post/add' method='post'>
+	<button type='submit'>POST</button>
+</form>
+
+<!-- Webcontent가 루트디렉토리.
+ html파일은  여기서는 주소를 수동할당하지않아도, 톰캣이 자동으로 할당된다. 
+3,5> add는 써블릿끝부분(src/ch01/C1_Get 에 할당한 그 add임 (이 주소는 상대주소이다 = context path가 없기떄문,있으면절대주소)
+ 즉 / 로 시작하면 절대주소임.  
+ 
+ 리퀘스트가 일단들어오면 http서버가 다받는다 -> 정적인 페이지?라면 http서버선에서 리스판스만들어내고끝냄 (단독으로처리)
+                                    동적이라면? 해당 리퀘스트를 서블렛 컨테이너로 보내고, 거기에서 처리할 수 잇는 서블릿을 호출해서 동적인 페이지를 만들어내고, 그것을 리스판스에 담아서  클라이언트로 보낸다. 
+
+http://localhost/jsp/ch01/01.getAdd.html (현재페이지의 절대주소)
++
+get/add
+---------------
+=http://localhost/jsp/ch01/get/add
+
+
+http://localhost/jsp/ch01/ ->현재주소 여기에 상대주소인 /get/add 를 붙이면된다. 
+	ch01/get/add 자원을 가진 객체를 찾아간다.
+	
+http://localhost/jsp/ch01/01.getAdd.html 
++
+post/add
+---------------
+=http://localhost/jsp/ch01/post/add
+ -->

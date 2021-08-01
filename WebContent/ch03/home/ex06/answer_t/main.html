@@ -1,0 +1,15 @@
+<!-- 쇼핑몰 장바구니 담는것 등을 해볼예정-->
+<meta charset='utf-8'> 
+<h3>상품</h3>
+<form action='cartAddProc.jsp' method='post'>
+   <ul>
+      <li>노트북<input type='checkbox' name='product' value='노트북'></li> <!-- partameter의 벨류의 타입은 :String [] -->
+      <li>모니터<input type='checkbox' name='product' value='모니터'></li><!--checkbox는 3개 준비했지만 parameter는 하나만 준비되어있다.(product 라는name명으로 받아올거여서 -->
+      <li>마우스<input type='checkbox' name='product' value='마우스'></li>
+   </ul>
+   <button type='submit'> 담기 </button>
+   <button type='submit' formaction='cartOut.jsp'>보기</button>
+</form> <!-- form안에 action을 n개를 둘 수 있다. like line 10 -->
+
+<!-- String일때는 getparameter() 
+   String[][   getparametervalues()을이용해서 정보를 받아오면된다. -->

@@ -1,0 +1,22 @@
+<meta charset='utf-8'><!--장바구니연습 -->
+<h3>상품</h3>
+<form action='cartProc.jsp' method='post'>
+	<ul>
+		<li>노트북 <input type='checkbox' name='product' value='노트북'></li> <!-- 여기서 파라미터 밸류타입 string[] ->getparameterValues로 받아야함-->
+		<li>모니터 <input type='checkbox' name='product' value='모니터'></li>
+		<li>마우스 <input type='checkbox' name='product' value='마우스'></li>
+	</ul>
+	<button type='submit'>담기</button> <!-- 장바구니에 담을것임 여기서는 cartProc액션이용-->
+	<button type='submit' formaction='cartOut.jsp'>보기</button> <!--여기는 cartOut 이용  -->
+</form>
+
+<!-- 
+각 버튼별로 다른 액션을 쓸 수 있게 
+String getParameter
+String []  getParameterValues
+
+9번줄을 10번줄처럼 써도된다. 
+<button type='submit formaction='cartProc.jsp'>담기</button>
+
+ -->
+

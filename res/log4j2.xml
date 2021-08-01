@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Configuration>
+	<Appenders> <!-- 출력장치 -->
+		<Console name='console' target='SYSTEM_OUT'> <!-- 이름은 유일하게 -->
+			<PatternLayout />
+		</Console>		
+		<RollingFile name='file' fileName='c:/DEV/jsp.log'
+			filePattern='c:/DEV/jsp.%d{yyyy-MM-dd-HH-mm-ss}.log'
+			append='true'>
+			<PatternLayout pattern='[%-5p: %d{yyyy/MM/dd HH:mm:ss}] %m%n' />
+			<Policies>				
+				<TimeBasedTriggeringPolicy interval='86400'/>
+			</Policies>
+		</RollingFile>
+	</Appenders>
+
+	<!-- FATAL, ERROR, WARN, INFO, DEBUG, TRACE -->
+	<Loggers>		
+		<Root level='INFO'> <!-- 인포이상을 출력 warn,error,fatal  -->
+			<AppenderRef ref='console' />
+			<AppenderRef ref='file' />						
+		</Root>
+	</Loggers>
+</Configuration>
+
+<!-- 
+12> 여기서 지정한 시간이 지나면 현재파일이 8번줄에서 지정한 제목을 가진 파일로 저장된다 
+   86400초단위로 백업파일을 만들어내는게 롤링의 역할
+ 
+ 10> [%-5p 에러수준을 말함  %m은 메세지 
+ 18> 출력장치를쓰려면 여기 20,21줄처럼 지정해줘야한다. 
+ 
+ -->

@@ -1,0 +1,30 @@
+<meta charset='utf-8'><!-- checkbox, radio  -->
+<form action='04.multiOut.jsp'>
+	<fieldset>
+		<input type='checkbox' name='letters' value='politics'/>정치
+		<input type='checkbox' name='letters' value='economics'/>경제
+		<input type='checkbox' name='letters' value='culture'/>문화
+	</fieldset>
+	
+	<fieldset>
+		<input type='radio' name='gender' value='male'/>남
+		<input type='radio' name='gender' value='female'/>여
+	</fieldset>
+		<select name='jobs' multiple>
+			<option value='developer'>개발자</option>
+			<option value='planner'>기획자</option>
+			<option value='dba'>DBA</option>
+		</select>
+	<input type='submit'/>
+</form>
+
+<!-- 
+체크박스에 밸류를 지정했더라도 체크를 하지않으면 파라미터 밸류값은 null이된다.
+3-6> letter로 네임이 동일해서 이 체크박스 두개는 그룹으로 묶인다.
+	
+	체크박스는 비배타적(스트링타입의 파라미터밸류가n개가됨), 라디오는 배타적(스트링타입의 파라미터밸류가 1개)
+
+10- >라디오에서도 name값을 동일하게 줘서 그룹으로 묶는다. 
+13> 체크박스 말고도 select으로도 n개를 파라미터밸류로 설정가능
+	→결국 파라미터밸류의 타입은 스트링 배열이됨. String[]
+ -->

@@ -1,0 +1,29 @@
+<meta charset='utf-8'><!-- 쿠키로 장바구니만들기 -->
+<h3>상품</h3>
+<form action='cartProc.jsp' method='post'>
+	<ul>
+		<li>노트북<input type='checkbox' name='product' value='노트북'></li>
+		<li>모니터<input type='checkbox' name='product' value='모니터'></li>
+		<li>마우스<input type='checkbox' name='product' value='마우스'></li>
+	</ul>
+	<button type='submit'>담기</button>
+	<button type='submit' formaction='cartOut.jsp'>보기</button>
+</form>
+
+<!-- 
+오늘 장바구니에 담은거 내일에도, 일주일후에도 보인다? 세션이끊긴뒤에도 장바구니를 계속 유지하고싶다면
+1. (로그인안햇을때도)쿠키에 저장한다. 2.(로그인상태에서)"데이터베이스"에 저장한다. 
+즉 앱 작동하는동안 생성한 비즈니스데이터를 세션이 끊긴후에도 계속보존하고싶다면 "데이터베이스" 혹은 "쿠키"에 저장한다. 
+
+쿠키 or DB 어디에 저장할건지 판단하는 기준은 
+  → 해당데이터가 노출되도 괜찮으면 '쿠키' 
+  	보안필요하면 (노출안돼욧 )'DB'에 저장 
+ 
+ 흔히 사이트에서보는 id저장기능에서 id만 저장하고싶다면 '쿠키'에 저장해도된다.
+  id + pw 까지 저장하고싶다면 DB에 저장한다
+  =pc 일때! 모바일에서는 모두 쿠키에 저장해도된다(왜냐 ? 스마트폰 전제가 나만쓰니까 )
+  쿠키로 pw를 저장할땐 암호화시켜서 저장해야한다(노출되더라도 못읽도록)
+  
+  자동로그인해서 아이디 저장하는 수준까지만 공부할겨 
+  
+ -->
